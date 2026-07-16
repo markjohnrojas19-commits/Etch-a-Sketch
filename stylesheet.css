@@ -6,10 +6,12 @@
 
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background-color: #f0f0f0;
+  gap: 30px;
 }
 
 #grid-container {
@@ -36,7 +38,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #ededed; /* Matches the image background */
+  background-color: #ededed;
   padding: 30px;
   font-family: Arial, sans-serif;
 }
@@ -60,7 +62,6 @@ body {
   outline: none;
 }
 
-/* Round thumb indicator (Chrome, Safari, Opera, Edge) */
 .custom-slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -71,7 +72,6 @@ body {
   cursor: pointer;
 }
 
-/* Round thumb indicator (Firefox) */
 .custom-slider::-moz-range-thumb {
   width: 20px;
   height: 20px;
@@ -100,51 +100,43 @@ button {
   gap: 12px;
 }
 
-/* colorMenu */
-/* --- KEEP YOUR EXISTING PROPERTIES, JUST ADD POSITION: RELATIVE --- */
 .side-Content-Container,
 .menu {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: relative; /* Crucial: This serves as the anchor point for the absolute coordinates */
+  position: relative;
 }
 
-/* --- REPLACE YOUR OLD #pickerContainer WITH THIS ONE --- */
 #pickerContainer {
   display: none;
   justify-content: center;
   align-items: center;
   padding: 12px;
 
-  /* Absolute Position Coordinates */
   position: absolute;
-  right: 135px; /* Pushes the container past the 120px button width, plus a small gap */
-  top: -10px; /* Aligns the top edge perfectly next to your "Pick color" button */
-  z-index: 100; /* Guarantees it floats over everything safely */
+  right: 135px;
+  top: -10px;
+  z-index: 100;
 
-  /* Your Design Styles Kept Intact */
   background-color: #ffffff;
   border: 2px solid #000000;
   border-radius: 8px;
   box-shadow: 0 1px 0px #000000;
 
-  /* Give it a set width so it has space for the layout wheel components */
   width: 180px;
   box-sizing: border-box;
 }
 
 /* HOVER EFFECT*/
-/* 1. Base Button Hover State */
-/* Smooth transition setup - add this to your base button selector if it isn't there */
+
 button {
   font-family: "monospace";
   width: 120px;
   height: 38px;
   border-radius: 9px;
 
-  /* Smooth animation speed configuration */
   transition:
     transform 0.15s ease-in-out,
     background-color 0.15s ease-in-out;
@@ -152,33 +144,39 @@ button {
 
 /* Hover growth effect */
 button:hover {
-  background-color: #f0f0f0; /* Subtle background color change */
+  background-color: #f0f0f0;
   cursor: pointer;
 
-  /* Grows the button by 5% */
   transform: scale(1.05);
 }
 
-/* Optional: Slight click press effect */
 button:active {
-  /* Scales it back down slightly when you physically click it */
   transform: scale(0.98);
 }
 
-/* Style for the circle element inside the button */
 .circle-Color {
-  width: 14px; /* Small enough to fit cleanly inside the 38px button height */
-  height: 14px; /* Must match the width perfectly to stay a circle */
-  border-radius: 50%; /* Forces the sharp square corners to become perfectly round */
-  background-color: #000000; /* Gives it an initial black fill so it is visible */
-  border: 1px solid #333333; /* Adds a clean outline so it stands out against light colors */
-  display: inline-block; /* Ensures the layout treats it like a block element */
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #000000;
+  border: 1px solid #333333;
+  display: inline-block;
 }
 
-/* Flexbox layout to align the text and circle perfectly inside the button */
 button.color {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px; /* Creates a clean space between the text and the circle */
+  gap: 8px;
+}
+
+.main-Content {
+  display: flex;
+  margin-bottom: 65px;
+  margin-top: 15px;
+}
+
+.title {
+  font-size: 45px;
+  padding-top: 12px;
 }

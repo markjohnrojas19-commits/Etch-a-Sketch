@@ -16,25 +16,34 @@
     <script src="javascript.js" defer></script>
   </head>
   <body>
-    <h3>Etch-a-Sketch</h3>
+    <h3 class="title">Etch-a-Sketch</h3>
 
-    <div class="side-Content-Container">
-      <div class="menu">
-        <button class="color" style="position: relative">
-          Color mode:
-          <div class="circle-Color"></div>
-        </button>
-        <div id="pickerContainer"></div>
-        <button class="erase">Erase</button>
-        <button class="toggle-Grid-Line">Toggle Grid Lines</button>
-        <button class="clear">Clear</button>
+    <div class="main-Content">
+      <div class="side-Content-Container">
+        <div class="menu">
+          <button class="color" style="position: relative">
+            Color mode:
+            <div class="circle-Color"></div>
+          </button>
+          <div id="pickerContainer"></div>
+          <button class="erase">Erase</button>
+          <button class="toggle-Grid-Line">Toggle Grid Lines</button>
+          <button class="clear">Clear</button>
+        </div>
+        <div class="slider-container">
+          <div class="slider-value">16 x 16</div>
+          <input
+            type="range"
+            class="custom-slider"
+            min="1"
+            max="64"
+            value="16"
+          />
+        </div>
       </div>
-      <div class="slider-container">
-        <div class="slider-value">16 x 16</div>
-        <input type="range" class="custom-slider" min="1" max="64" value="16" />
-      </div>
+
+      <div id="grid-container"></div>
     </div>
-
-    <div id="grid-container"></div>
+    <h4 class="text-Footer">Copyright © markjohnrojas 2026</h4>
   </body>
 </html>
